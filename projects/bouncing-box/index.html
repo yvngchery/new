@@ -78,12 +78,18 @@
 				/* Your Code to Increase positionX by 10 HERE*/
 				positionX = positionX + speed;
 				moveBoxTo(positionX);
-
+				console.log({ speed })
 				if (positionX > boardWidth) {
-					 speed = -speed;
-
+					speed = -speed;
+					console.log(84)
 					// then do X, Y, and Z
 				}
+				if (positionX < 0) {
+					speed = -speed;
+					console.log(89)
+				}
+
+
 
 
 
@@ -96,7 +102,13 @@
 			*/
 			function handleBoxClick() {
 				positionX = 0;
-				speed = speed + 3
+				if (speed > 0) {
+					speed = speed + 3
+				}
+
+				if (speed < 0) {
+					speed = speed - 3
+				}
 				// your code to increase the points variable by 1
 				points = points + 1
 
