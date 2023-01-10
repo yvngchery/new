@@ -9,7 +9,7 @@
         #take-order {
             display: flex;
             flex-direction: row;
-
+            flex-wrap:wrap;
         }
 
         #take-order>p {
@@ -29,6 +29,7 @@
         img {
             width: 250px;
         }
+     
     </style>
 </head>
 
@@ -37,12 +38,12 @@
         <nav>
             <h1>Chery's Franks</h1>
             <div id="take-order">
-                <p>When you're ready to place your order, click here: </p>
+                <p>If he cant break bread he FAKE, click here: </p>
                 <button>Place Order</button>
             </div>
         </nav>
         <main>
-            <h3>Menu</h3>
+            <h3>Da Menü</h3>
             <div id="menu">
                 <div id=bruce-frank" class="menu-item">
                     <h4> #1 - Bruce Frank</h4>
@@ -94,6 +95,9 @@
         function takeOrder() {
             var orderNumber = prompt('Enter Order Number twinnn 🤞🏾');
             var total = 0
+            var wantFries = prompt('Hey wan some fries twinn').toLowerCase();
+            var wantDrink = prompt('What would you like to sip twinn').toLowerCase();
+
 
             if (orderNumber === '1') {
                 total += 100.00;
@@ -112,7 +116,16 @@
             } else {
                 alert('Sorry, you entered an incorrect combo number');
             }
+  
+            if(wantFries === "yes"){
+                total += 1.50;
+            }
+            if(wantDrink === "yes"){
+                total += 1.99;
+            }
+            alert('The total for your order is ' + total + '. We\'ll have it out shortly. Thanks for visiting twinnnnn, what a great day to be DEO !!');
         }
+
 
 
 
