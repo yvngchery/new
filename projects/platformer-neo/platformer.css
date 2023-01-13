@@ -1,0 +1,11 @@
+body {
+  margin: 0px;
+}
+
+canvas {
+  background-image: image("https://static.wikia.nocookie.net/multiversus/images/5/57/Tree_Fort.png/revision/latest?cb=20220710201356");
+}
+
+img {
+  display: none;
+}
