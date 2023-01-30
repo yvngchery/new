@@ -3,7 +3,6 @@ var init = function (window) {
     var
         draw = window.opspark.draw,
         physikz = window.opspark.racket.physikz,
-
         app = window.opspark.makeApp(),
         canvas = app.canvas,
         view = app.view,
@@ -24,19 +23,26 @@ var init = function (window) {
         var circles = [];
 
         // TODO 2 : Create a function that draws a circle 
-        function drawCircle() {
+        var drawCircle = function () {
+
+            //create the circle
+            //randomCircleInArea(area, randomizeAlpha, addCross, borderColor, borderThickness, randomRadial)
             circle = draw.randomCircleInArea(canvas, true, true, '#999', 2);
-            physikz.addRandomVelocity(circle, canvas);
-            view.addChild(circle);
+
+            // set motion properties
+            physikz.addRandomVelocity(circle, canvas, 100, 1);
+
+            // add the circle to circles array, add to view
             circles.push(circle);
+            view.addChild(circle);
         };
 
         // TODO 3 / 7 : Call the drawCircle() function 
-        drawCircle()
-        drawCircle()
-        drawCircle()
-        drawCircle()
-        drawCircle()
+        drawCircle();
+        drawCircle();
+        drawCircle();
+        drawCircle();
+        drawCircle();
 
         ////////////////////////////////////////////////////////////
         ///////////////// PROGRAM LOGIC ////////////////////////////
@@ -47,12 +53,34 @@ var init = function (window) {
         In each frame, for every circle, it should redraw that circle
         and check to see if it has drifted off the screen.         
         */
-        function update() {
+        var update = function () {
             // TODO 4 : Update the circle's position //
-
+            physikz.updatePosition(circles[0]);
+            physikz.updatePosition(circles[1]);
+            physikz.updatePosition(circles[2]);
+            physikz.updatePosition(circles[3]);
+            physikz.updatePosition(circles[4]);
 
             // TODO 5 / 10 : Call game.checkCirclePosition() on your circles.
 
+            // canvas.width
+            // canvas.height
+
+            // circle.x
+            // circle.y
+            // circle.radius
+
+            game.checkCirclePosition(circles[0]);
+            game.checkCirclePosition(circles[1]);
+            game.checkCirclePosition(circles[2]);
+            game.checkCirclePosition(circles[3]);
+            game.checkCirclePosition(circles[4]);
+  
+            // game.checkCirclePosition = function(circle){
+            //     if (circle.x > canvas.width){
+            //         circle.x = 0;
+            //     }
+            // }
 
             // TODO 9 : Iterate over the array
 
