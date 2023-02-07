@@ -81,7 +81,7 @@ var init = function (window) {
             //         circle.x = 0;
             //     }
             // }
-
+            
             // TODO 9 : Iterate over the array
 
 
