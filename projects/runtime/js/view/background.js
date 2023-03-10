@@ -38,7 +38,7 @@ var background = function (window) {
             // you should modify this to suit your game
             var backgroundFill = draw.rect(canvasWidth,canvasHeight,'yellow');
             background.addChild(backgroundFill);
-            
+            // draw.rect(width, height, fillColor);
             // TODO: 3 - Add a moon and starfield
             
             
