@@ -53,7 +53,14 @@ var background = function (window) {
                 background.addChild(circle);
             }
             // TODO 5: Part 1 - Add buildings!     Q: This is before TODO 4 for a reason! Why?
-
+            for (var i = 0; i < 5; ++i) {
+                var buildingHeight = 140;
+                var building = draw.rect(75, buildingHeight, "orange", "white", 1);
+                building.x = 200 * i;
+                building.y = groundY - buildingHeight;
+                background.addChild(building);
+                buildings.push(building);
+              }
 
             // TODO 4: Part 1 - Add a tree
             tree = draw.bitmap("img/tree.png");
@@ -64,6 +71,7 @@ var background = function (window) {
         } // end of render function - DO NOT DELETE
 
         var tree;
+        var buildings = []
         // Perform background animation
         // called on each timer "tick" - 60 times per second
         function update() {
