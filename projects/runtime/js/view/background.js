@@ -105,7 +105,7 @@ var background = function (window) {
         
         } // end of update function - DO NOT DELETE
 
-
+// on my way
 
         /* Make a createjs Container for the background and let it know about the render and upate functions*/
         background = new createjs.Container();
