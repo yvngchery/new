@@ -25,7 +25,7 @@ var init = function (window) {
         particleManager;
 
     var debugHalleHitZones = false;
-
+    
     space = app.space;
     rules = app.rules,
         particleManager = opspark.makeParticleManager(app.stage);

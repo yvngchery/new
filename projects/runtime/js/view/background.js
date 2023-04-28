@@ -46,13 +46,14 @@ var background = function (window) {
             moon.scaleX = 0.5;
             moon.scaleY = 0.5;
             background.addChild(moon);
-
+            
             for (var i = 0; i < 100; i++) {
                 var circle = draw.circle(5, "white", "LightGray", 2);
                 circle.x = canvasWidth * Math.random();
                 circle.y = groundY * Math.random();
                 background.addChild(circle);
             }
+           
             // TODO 5: Part 1 - Add buildings!     Q: This is before TODO 4 for a reason! Why?
             for (var i = 0; i < 10; ++i) {
                 var buildingHeight = groundY * Math.random();
@@ -99,10 +100,14 @@ var background = function (window) {
                 if (buildings[i].x < -200){
                     buildings[i].x = canvasWidth;
                 }
+
+                if (buildings[i].x > canvasWidth){
+                    buildings[i].x = -200
+                }
                 // code to do something with each element
             }
 
-        
+     
         } // end of update function - DO NOT DELETE
 
 
