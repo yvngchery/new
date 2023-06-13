@@ -87,23 +87,30 @@ function moveSnake() {
   column/row properties. 
   
   */
-  for ( var i = snake.body; i > snake.body.length; i ++) {
-    var snakeSquare = "???";
-    
-    var nextSnakeSquare = "???";
-    var nextRow = "???";
-    var nextColumn = "???";
-    var nextDirection = "???";
-    
-    snakeSquare.direction = nextDirection;
-    snakeSquare.row = nextRow;
-    snakeSquare.column = nextColumn;
+  
+  for (var i = snake.body.length - 1; i >= 1; i--) {
+    var snakeSquare = snake.body[i];
+    var nextSnakeSquare = snake.body[i - 1];
+
+    snakeSquare.direction = nextSnakeSquare.direction;
+
+    snakeSquare.row = nextSnakeSquare.row;
+    snakeSquare.column = nextSnakeSquare.column;
+
     repositionSquare(snakeSquare);
-}
+  }
+   
 
   //Before moving the head, check for a new direction from the keyboard input
   checkForNewDirection();
 
+    if (snake.head.direction === "left") { snake.head.column--; }
+    else if (snake.head.direction === "right") { snake.head.column++; }
+    else if (snake.head.direction === "up") { snake.head.row--; }
+    else if (snake.head.direction === "down") { snake.head.row++; }
+    
+    repositionSquare(snake.head);
+  }
 
   /* 
   TODO 6: determine the next row and column for the snake's head
@@ -125,7 +132,7 @@ function moveSnake() {
   }
   repositionSquare(snake.head);
 
-}
+
 
 function checkForNewDirection(event) {
   /* 
@@ -358,7 +365,7 @@ function getRandomAvailablePosition() {
   */
 function handleKeyDown(event) {
   activeKey = event.which;
-  console.log(activeKey);
+  // console.log(activeKey);
 }
 
 
